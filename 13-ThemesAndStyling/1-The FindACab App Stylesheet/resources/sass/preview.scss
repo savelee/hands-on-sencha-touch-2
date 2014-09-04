@@ -1,0 +1,165 @@
+@font-face{
+ font-family: "Bebas";
+ src: url(data:font/ttf;base64,-some-base-64-string) format('woff');
+}
+
+$yellow: rgba(250,178,68,1);
+$black: #494949;
+$base-color: $yellow;
+$alternative-color: lighten(#494949, 5%);
+$alert-color: #B0886D;
+$confirm-color: #FFA500;
+$active-color: darken($base-color, 1%);
+ 
+// GRADIENTS
+$base-gradient: 'none';
+
+// LISTS
+$list-color: darken($active-color, 20%);
+$list-active-color: transparentize($active-color, .2);
+$list-active-gradient: 'recessed';
+$list-header-bg-color: darken($alternative-color, 10%);
+$list-pressed-color: lighten($list-active-color, 10%);
+$list-bg-color: #353535;
+
+$global-list-height : 40px;
+$list-disclosure-round-size: 2em;
+$list-disclosure-size: 1.7em;
+$list-round-padding: 20px !default;
+
+$include-pictos-font: false;
+$include-default-icons: false;
+
+$experimental-support-for-opera:false;
+$experimental-support-for-khtml:false;
+$experimental-support-for-microsoft :false;
+@import "compass/css3";
+
+@import 'sencha-touch/default';
+/*@import 'sencha-touch/default/all'*/;
+
+@import 'sencha-touch/default/src/_Class.scss';
+@import 'sencha-touch/default/src/_Button.scss';
+@import 'sencha-touch/default/src/_Panel.scss';
+/*@import 'sencha-touch/default/src/_Sheet.scss';*/
+@import 'sencha-touch/default/src/_MessageBox.scss';
+@import 'sencha-touch/default/src/_Toolbar.scss';
+/*@import 'sencha-touch/default/src/_Menu.scss';*/
+/*@import 'sencha-touch/default/src/carousel/_Carousel.scss';*/
+@import 'sencha-touch/default/src/form/_Panel.scss';
+@import 'sencha-touch/default/src/form/_FieldSet.scss';
+@import 'sencha-touch/default/src/field/_Field';
+/*@import 'sencha-touch/default/src/field/_Checkbox.scss';*/
+/*@import 'sencha-touch/default/src/field/_Radio.scss';*/
+/*@import 'sencha-touch/default/src/field/_Search.scss';*/
+/*@import 'sencha-touch/default/src/field/_Select.scss';*/
+/*@import 'sencha-touch/default/src/field/_Slider.scss';*/
+/*@import 'sencha-touch/default/src/field/_Spinner.scss';*/
+/*@import 'sencha-touch/default/src/field/_TextArea.scss';*/
+/*@import 'sencha-touch/default/src/dataview/_IndexBar.scss';*/
+@import 'sencha-touch/default/src/dataview/_List.scss';
+/*@import 'sencha-touch/default/src/picker/_Picker.scss';*/
+/*@import 'sencha-touch/default/src/plugin/_ListPaging.scss';*/
+/*@import 'sencha-touch/default/src/plugin/_PullRefresh.scss';*/
+/*@import 'sencha-touch/default/src/slider/_Slider.scss';*/
+@import 'sencha-touch/default/src/slider/_Toggle.scss';
+/*@import 'sencha-touch/default/src/tab/_Panel.scss';*/
+
+//mixins
+@include sencha-toolbar-ui('light', darken($black,10%), 'recessed');
+
+@include icon('settings', 'y', 'findacabfontello');
+@include icon('delete', '*', 'findacabfontello');
+@include icon('phone', 't', 'findacabfontello');
+
+.x-list .x-list-disclosure:before { 
+    content: ']'; 
+    font-family: 'findacabfontello';
+    color: #000;
+}
+
+.callnow:after { 
+    content: 't'; 
+    font-family: 'findacabfontello';
+    padding-left: 10px;
+}
+
+// Custom code goes here..
+
+.x-toolbar .x-innerhtml {
+    font-family: "Lobster"; 
+    font-size: 1.2em; 
+    line-height: 2em; 
+}
+
+.x-list .x-list-item {
+    color: #ccc;
+}
+
+/* template */
+
+body {
+    font: {
+        family: HelveticaNeue-Light, Helvetica, sans-serif;
+    }
+}
+
+.taxitpl {
+    h1 {
+        font-family: "Bebas";
+        font-size: 1.8em;
+    }
+
+    p,
+    address {
+        margin: 0 0 20px 0;
+        font-size: 1.4em;
+    }
+
+    p {
+        margin-top: 20px;
+        font-size: 0.8em;
+    }
+
+}
+.taxitpl .x-dock-horizontal {
+    background: url(../images/stroke.png) repeat-x;
+    padding: 35px 0;
+}
+
+.distance {
+    display: inline-block;
+    padding: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    background: #ccc;
+    color: #000;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    margin-left: 2px;
+    font-size: 0.7em;
+}
+
+.callnow {
+    display: inline-block;
+    font: {
+        size: 1.2em;
+    }
+    line-height: 1.6em;
+    padding: 0 20px;
+    text-decoration: none;
+
+    &:hover {
+        background: darken(#ccc, 20%);
+    }
+
+}
+
+.error input {
+	border: 3px solid red;
+}
+
+.x-form-fieldset-instructions {
+    text-align: left;
+}

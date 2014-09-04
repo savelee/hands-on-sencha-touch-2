@@ -1,0 +1,191 @@
+{
+    "message": {
+        "text": "OK",
+        "code": 0,
+        "version": "1.1.1"
+    },
+    "businesses": [
+        {
+            "rating_img_url": "http://s3-media1.ak.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/stars_5.png",
+            "country_code": "NL",
+            "id": "oVCwW-nr_SCRtsCo_yk3JQ",
+            "is_closed": false,
+            "city": "Amsterdam",
+            "mobile_url": "http://m.yelp.nl/biz/taxi-klaas-amsterdam",
+            "review_count": 2,
+            "zip": "",
+            "state": "Noord-Holland",
+            "latitude": 52.3738007,
+            "rating_img_url_small": "http://s3-media1.ak.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png",
+            "address1": "",
+            "address2": "",
+            "address3": "",
+            "phone": "+31630383525",
+            "state_code": "NH",
+            "categories": [
+                {
+                    "category_filter": "localservices",
+                    "search_url": "http://www.yelp.nl/search?cflt=localservices&find_desc=&find_loc=Amsterdam",
+                    "name": "Local Services"
+                },
+                {
+                    "category_filter": "taxis",
+                    "search_url": "http://www.yelp.nl/search?cflt=taxis&find_desc=&find_loc=Amsterdam",
+                    "name": "Taxis"
+                }
+            ],
+            "photo_url": "http://media1.ak.yelpcdn.com/bpthumb/b_4BVMdLncwu_XOFuMo4pQ/ms",
+            "distance": 0.305419,
+            "name": "Taxi Klaas",
+            "neighborhoods": [
+                {
+                    "url": "http://www.yelp.nl/search?exclude_start=True&find_desc=&find_loc=Centrum%2C+Amsterdam%2C+Noord-Holland",
+                    "name": "Centrum"
+                }
+            ],
+            "url": "http://www.yelp.nl/biz/taxi-klaas-amsterdam",
+            "country": "Netherlands",
+            "avg_rating": 5,
+            "longitude": 4.8909347,
+            "nearby_url": "http://www.yelp.nl/search?find_desc=&find_loc=Amsterdam",
+            "reviews": [
+                {
+                    "rating_img_url_small": "http://s3-media1.ak.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png",
+                    "user_photo_url_small": "http://media1.ak.yelpcdn.com/upthumb/gyWstOO9Ht7XvBi5SaXHqA/ss",
+                    "rating_img_url": "http://s3-media1.ak.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/stars_5.png",
+                    "rating": 5,
+                    "user_url": "http://www.yelp.nl/user_details?userid=o5DQC2ALlgYFgNeCRlcC_Q",
+                    "url": "http://www.yelp.nl/biz/taxi-klaas-amsterdam#hrid:n-xXUx1QoH4F2zyKimhJ8A",
+                    "mobile_uri": "/biz/taxi-klaas-amsterdam?full=True#hrid:n-xXUx1QoH4F2zyKimhJ8A",
+                    "text_excerpt": "Mijn favoriete taxi chauffeur in Amsterdam: KLAAS!\nToen ik begon aan de Hotelschool was Klaas al redelijk bekend onder de Hotello's. Denk ook dat ik negen...",
+                    "user_photo_url": "http://media1.ak.yelpcdn.com/upthumb/gyWstOO9Ht7XvBi5SaXHqA/ms",
+                    "date": "2010-11-16",
+                    "user_name": "Julia R.",
+                    "id": "n-xXUx1QoH4F2zyKimhJ8A"
+                },
+                {
+                    "rating_img_url_small": "http://s3-media1.ak.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png",
+                    "user_photo_url_small": "http://media1.ak.yelpcdn.com/upthumb/Qd078lx1TEz1rpuPEC-5Rw/ss",
+                    "rating_img_url": "http://s3-media1.ak.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/stars_5.png",
+                    "rating": 5,
+                    "user_url": "http://www.yelp.nl/user_details?userid=ksTiJ0MH-AVLbEfJoW0Cjg",
+                    "url": "http://www.yelp.nl/biz/taxi-klaas-amsterdam#hrid:ssAuuA2KR73muTAZn6zU8A",
+                    "mobile_uri": "/biz/taxi-klaas-amsterdam?full=True#hrid:ssAuuA2KR73muTAZn6zU8A",
+                    "text_excerpt": "Met al die onbetrouwbare taxichauffeurs van tegenwoordig is het misschien wel goed om te weten dat er minimaal 1 taxichauffeur is waarop je kan bouwen,...",
+                    "user_photo_url": "http://media1.ak.yelpcdn.com/upthumb/Qd078lx1TEz1rpuPEC-5Rw/ms",
+                    "date": "2010-11-22",
+                    "user_name": "Felix R.",
+                    "id": "ssAuuA2KR73muTAZn6zU8A"
+                }
+            ],
+            "photo_url_small": "http://media1.ak.yelpcdn.com/bpthumb/b_4BVMdLncwu_XOFuMo4pQ/ss"
+        },
+        {
+            "rating_img_url": "http://s3-media4.ak.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png",
+            "country_code": "NL",
+            "id": "kJ9xDwftdgwWWhxVFXGe5Q",
+            "is_closed": false,
+            "city": "Amsterdam",
+            "mobile_url": "http://m.yelp.nl/biz/limo-taxi-amsterdam-amsterdam",
+            "review_count": 1,
+            "zip": "1067 NH",
+            "state": "Noord-Holland",
+            "latitude": 52.3768893,
+            "rating_img_url_small": "http://s3-media4.ak.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png",
+            "address1": "Nicolaas Ruychaverstraat 106",
+            "address2": "",
+            "address3": "",
+            "phone": "+31641487119",
+            "state_code": "NH",
+            "categories": [
+                {
+                    "category_filter": "taxis",
+                    "search_url": "http://www.yelp.nl/search?cflt=taxis&find_desc=&find_loc=Nicolaas+Ruychaverstraat+106%2C+Amsterdam+1067+NH",
+                    "name": "Taxis"
+                }
+            ],
+            "photo_url": "http://s3-media1.ak.yelpcdn.com/assets/2/www/img/924a6444ca6c/gfx/blank_biz_medium.gif",
+            "distance": 3.9267116,
+            "name": "Limo Taxi Amsterdam",
+            "neighborhoods": [],
+            "url": "http://www.yelp.nl/biz/limo-taxi-amsterdam-amsterdam",
+            "country": "Netherlands",
+            "avg_rating": 4,
+            "longitude": 4.8027254,
+            "nearby_url": "http://www.yelp.nl/search?find_desc=&find_loc=Nicolaas+Ruychaverstraat+106%2C+Amsterdam+1067+NH",
+            "reviews": [
+                {
+                    "rating_img_url_small": "http://s3-media4.ak.yelpcdn.com/assets/2/www/img/f62a5be2f902/ico/stars/v1/stars_small_4.png",
+                    "user_photo_url_small": "http://media1.ak.yelpcdn.com/upthumb/XL62gMSkvr4bXaEY1na8dQ/ss",
+                    "rating_img_url": "http://s3-media4.ak.yelpcdn.com/assets/2/www/img/c2f3dd9799a5/ico/stars/v1/stars_4.png",
+                    "rating": 4,
+                    "user_url": "http://www.yelp.nl/user_details?userid=tUImd_Kd8FzPo04QCiBZPA",
+                    "url": "http://www.yelp.nl/biz/limo-taxi-amsterdam-amsterdam#hrid:0w1vbKMDYFDBYtV5eJZATw",
+                    "mobile_uri": "/biz/limo-taxi-amsterdam-amsterdam?full=True#hrid:0w1vbKMDYFDBYtV5eJZATw",
+                    "text_excerpt": "Limo Taxi Amsterdam is een super goede taxi centrale. De auto's waarin je wordt gereden zijn super luxe en de chauffeurs ontzettend netjes. Ideaal...",
+                    "user_photo_url": "http://media1.ak.yelpcdn.com/upthumb/XL62gMSkvr4bXaEY1na8dQ/ms",
+                    "date": "2010-10-17",
+                    "user_name": "babette S.",
+                    "id": "0w1vbKMDYFDBYtV5eJZATw"
+                }
+            ],
+            "photo_url_small": "http://s3-media1.ak.yelpcdn.com/assets/2/www/img/5f85b62dfdb1/gfx/blank_biz_small.gif"
+        },
+        {
+            "rating_img_url": "http://s3-media1.ak.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/stars_5.png",
+            "country_code": "NL",
+            "id": "OrR8OjGGvQKSKcSlcUugfA",
+            "is_closed": false,
+            "city": "Amsterdam",
+            "mobile_url": "http://m.yelp.nl/biz/melody-taxi-amsterdam",
+            "review_count": 1,
+            "zip": "1056 LC",
+            "state": "Noord-Holland",
+            "latitude": 52.3748224,
+            "rating_img_url_small": "http://s3-media1.ak.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png",
+            "address1": "Joos Banckersplantsoen 3",
+            "address2": "",
+            "address3": "",
+            "phone": "+31623927119",
+            "state_code": "NH",
+            "categories": [
+                {
+                    "category_filter": "taxis",
+                    "search_url": "http://www.yelp.nl/search?cflt=taxis&find_desc=&find_loc=Joos+Banckersplantsoen+3%2C+Amsterdam+1056+LC",
+                    "name": "Taxis"
+                }
+            ],
+            "photo_url": "http://media4.ak.yelpcdn.com/bpthumb/S3yvMaIUvMndzswAOHL_Tw/ms",
+            "distance": 1.6514574,
+            "name": "Melody Taxi",
+            "neighborhoods": [
+                {
+                    "url": "http://www.yelp.nl/search?exclude_start=True&find_desc=&find_loc=West%2C+Amsterdam%2C+Noord-Holland",
+                    "name": "West"
+                }
+            ],
+            "url": "http://www.yelp.nl/biz/melody-taxi-amsterdam",
+            "country": "Netherlands",
+            "avg_rating": 5,
+            "longitude": 4.8567526,
+            "nearby_url": "http://www.yelp.nl/search?find_desc=&find_loc=Joos+Banckersplantsoen+3%2C+Amsterdam+1056+LC",
+            "reviews": [
+                {
+                    "rating_img_url_small": "http://s3-media1.ak.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png",
+                    "user_photo_url_small": "http://media1.ak.yelpcdn.com/upthumb/PSqo3fnVoSeiyS4oKHarOg/ss",
+                    "rating_img_url": "http://s3-media1.ak.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/stars_5.png",
+                    "rating": 5,
+                    "user_url": "http://www.yelp.nl/user_details?userid=CIi0UKyKWjjcyuWfchFwNg",
+                    "url": "http://www.yelp.nl/biz/melody-taxi-amsterdam#hrid:0PAuVZfNbzGp6ej-Ng0AJA",
+                    "mobile_uri": "/biz/melody-taxi-amsterdam?full=True#hrid:0PAuVZfNbzGp6ej-Ng0AJA",
+                    "text_excerpt": "Vanuit hartje centrum, West of Zuid brengt deze taxi je voor 28 euro naar Schiphol. Geniaal en echt een prikkie!\nLet op er zijn een aantal spelregels:\n-...",
+                    "user_photo_url": "http://media1.ak.yelpcdn.com/upthumb/PSqo3fnVoSeiyS4oKHarOg/ms",
+                    "date": "2010-11-25",
+                    "user_name": "Sanneke R.",
+                    "id": "0PAuVZfNbzGp6ej-Ng0AJA"
+                }
+            ],
+            "photo_url_small": "http://media4.ak.yelpcdn.com/bpthumb/S3yvMaIUvMndzswAOHL_Tw/ss"
+        }
+    ]
+}

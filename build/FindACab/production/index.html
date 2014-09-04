@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html manifest="cache.appcache" lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>FindACab</title>
+    <style type="text/css">
+         /**
+         * Example of an initial loading indicator.
+         * It is recommended to keep this as minimal as possible to provide instant feedback
+         * while other resources are still being loaded for the first time
+         */
+        html, body {
+            height: 100%;
+            background-color: #1985D0
+        }
+
+        #appLoadingIndicator {
+            position: absolute;
+            top: 50%;
+            margin-top: -15px;
+            text-align: center;
+            width: 100%;
+            height: 30px;
+            -webkit-animation-name: appLoadingIndicator;
+            -webkit-animation-duration: 0.5s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-direction: linear;
+        }
+
+        #appLoadingIndicator > * {
+            background-color: #FFFFFF;
+            display: inline-block;
+            height: 30px;
+            -webkit-border-radius: 15px;
+            margin: 0 5px;
+            width: 30px;
+            opacity: 0.8;
+        }
+
+        @-webkit-keyframes appLoadingIndicator{
+            0% {
+                opacity: 0.8
+            }
+            50% {
+                opacity: 0
+            }
+            100% {
+                opacity: 0.8
+            }
+        }
+    </style>
+    <!-- The line below must be kept intact for Sencha Command to build your application -->
+    <script type="text/javascript">(function(m){function t(b){function c(a,b){var f=a.length,j,e;for(j=0;j<f;j++){e=a[j];var c=a,d=j,g=void 0;"string"==typeof e&&(e={path:e});e.shared?(e.version=e.shared,g=e.shared+e.path):(E.href=e.path,g=E.href);e.uri=g;e.key=F+"-"+g;h[g]=e;c[d]=e;e.type=b;e.index=j;e.collection=a;e.ready=!1;e.evaluated=!1}return a}var f;"string"==typeof b?(f=b,b=G(f)):f=JSON.stringify(b);var F=b.id,d=F+"-"+H+r,h={};this.key=d;this.css=c(b.css,"css");this.js=c(b.js,"js");q.microloaded=!0;var g=window.Ext.filterPlatform=
+function(a){function b(a){var c=/Mobile(\/|\s)/.test(a);return/(iPhone|iPod)/.test(a)||!/(Silk)/.test(a)&&/(Android)/.test(a)&&(/(Android 2)/.test(a)||c)||/(BlackBerry|BB)/.test(a)&&c||/(Windows Phone)/.test(a)}function f(a){return!b(a)&&(/iPad/.test(a)||/Android|Silk/.test(a)||/(RIM Tablet OS)/.test(a)||/MSIE 10/.test(a)&&/; Touch/.test(a))}var j=!1,e=navigator.userAgent,c,g;a=[].concat(a);c=window.location.search.substr(1).split("\x26");g={};var d;for(d=0;d<c.length;d++){var h=c[d].split("\x3d");
+g[h[0]]=h[1]}if(c=g.platform)return-1!=a.indexOf(c);c=0;for(g=a.length;c<g;c++){switch(a[c]){case "phone":j=b(e);break;case "tablet":j=f(e);break;case "desktop":j=!b(e)&&!f(e);break;case "ios":j=/(iPad|iPhone|iPod)/.test(e);break;case "android":j=/(Android|Silk)/.test(e);break;case "blackberry":j=/(BlackBerry|BB)/.test(e);break;case "safari":j=/Safari/.test(e)&&!/(BlackBerry|BB)/.test(e);break;case "chrome":j=/Chrome/.test(e);break;case "ie10":j=/MSIE 10/.test(e);break;case "windows":j=/MSIE 10/.test(e)||
+/Trident/.test(e);break;case "tizen":j=/Tizen/.test(e);break;case "firefox":j=/Firefox/.test(e)}if(j)return!0}return!1};this.css=this.css.filter(function(a){var b=a.platform,c=a.exclude;if(b){if(g(b)&&!g(c))return q.theme={name:a.theme||"Default"},!0;a.filtered=!0;return!1}return!0});this.js=this.js.filter(function(a){var b=a.platform,c=a.exclude;return b&&(!g(b)||g(c))?(a.filtered=!0,!1):!0});this.assets=this.css.concat(this.js);this.getAsset=function(a){return h[a]};this.store=function(){y(d,f)}}
+function z(b,c){var f=document.createElement("meta");f.setAttribute("name",b);f.setAttribute("content",c);p.appendChild(f)}function s(b,c,f){var d=new XMLHttpRequest;f=f||I;b=b+(-1==b.indexOf("?")?"?":"\x26")+Date.now();try{d.open("GET",b,!0),d.onreadystatechange=function(){if(4==d.readyState){var b=d.status,g=d.responseText;200<=b&&300>b||304==b||0==b&&0<g.length?c(g):f()}},d.send(null)}catch(l){f()}}function O(b,c){var f=k.createElement("iframe");n.push({iframe:f,callback:c});f.src=b+".html";f.style.cssText=
+"width:0;height:0;border:0;position:absolute;z-index:-999;visibility:hidden";k.body.appendChild(f)}function J(b,c,f){var d=!!b.shared;if(b.remote)c("");else{if(!d){var l=c,h=b.version,g=h.length,a,u;c=function(c){u=c.substring(0,1);"/"==u?c.substring(2,g+2)!==h&&(a=!0):"f"==u?c.substring(9,g+9)!==h&&(a=!0):"."==u&&c.substring(1,g+1)!==h&&(a=!0);!0===a?confirm("Requested: '"+b.uri+" seems to have been changed. Attempt to refresh the application?")&&!K&&(K=!0,s(r,function(a){(new t(a)).store();m.location.reload()})):
+l(c)}}(d?O:s)(b.uri,c,f)}}function L(b){var c=b.data;b=b.source.window;var f,d,l,h;f=0;for(d=n.length;f<d;f++)if(l=n[f],h=l.iframe,h.contentWindow===b){l.callback(c);k.body.removeChild(h);n.splice(f,1);break}}function A(b){"undefined"!=typeof console&&(console.error||console.log).call(console,b)}function y(b,c){try{v.setItem(b,c)}catch(d){v&&(d.code==d.QUOTA_EXCEEDED_ERR&&B)&&A("LocalStorage Quota exceeded, cannot store "+b+" locally")}}function w(b){try{return v.getItem(b)}catch(c){return null}}
+function C(b){function c(a,b){var c=a.collection,d=a.index,e=c.length,g;a.ready=!0;a.content=b;for(g=d-1;0<=g;g--)if(a=c[g],!a.filtered&&(!a.ready||!a.evaluated))return;for(g=d;g<e;g++)if(a=c[g],a.ready)a.evaluated||f(a);else break}function f(a){a.evaluated=!0;if("js"==a.type)try{eval(a.content)}catch(b){A("Error evaluating "+a.uri+" with message: "+b)}else{var c=k.createElement("style"),d;c.type="text/css";c.textContent=a.content;"id"in a&&(c.id=a.id);"disabled"in a&&(c.disabled=a.disabled);d=document.createElement("base");
+d.href=a.path.replace(/\/[^\/]*$/,"/");p.appendChild(d);p.appendChild(c);p.removeChild(d)}delete a.content;0==--h&&m()}function m(){function a(){l&&c()}function c(){var a=q.onUpdated||I;if("onSetup"in q)q.onSetup(a);else a()}function f(){g.store();h.forEach(function(a){y(a.key,a.content)});c()}function j(a,b){a.content=b;0==--n&&(d.status==d.IDLE?f():k=f)}function e(){M("online",e,!1);s(r,function(c){B=g=new t(c);var e;g.assets.forEach(function(a){e=b.getAsset(a.uri);(!e||a.version!==e.version)&&
+h.push(a)});n=h.length;0==n?d.status==d.IDLE?a():k=a:h.forEach(function(a){function c(){J(a,function(b){j(a,b)})}var d=b.getAsset(a.uri),e=a.path,f=a.update;!d||!f||null===w(a.key)||"delta"!=f?c():s("deltas/"+e+"/"+d.version+".json",function(b){try{var c=a,d;var e=w(a.key),f=G(b);b=[];var g,h,k;if(0===f.length)d=e;else{h=0;for(k=f.length;h<k;h++)g=f[h],"number"===typeof g?b.push(e.substring(g,g+f[++h])):b.push(g);d=b.join("")}j(c,d)}catch(l){A("Malformed delta content received for "+a.uri)}},c)})})}
+var h=[],l=!1,k=function(){},p=function(){d.swapCache();l=!0;k()},n;M("message",L,!1);if(d.status==d.UPDATEREADY)p();else if(d.status==d.CHECKING||d.status==d.DOWNLOADING)d.onupdateready=p,d.onnoupdate=d.onobsolete=function(){k()};!1!==navigator.onLine?e():D("online",e,!1)}var l=b.assets,h=l.length,g;B=b;D("message",L,!1);0==h?m():l.forEach(function(a){var b=w(a.key);null===b?J(a,function(b){a.remote||y(a.key,b);c(a,b)},function(){c(a,"")}):c(a,b)})}function N(b){if(navigator.userAgent.match(/IEMobile\/10\.0/)){var c=
+document.createElement("style");c.appendChild(document.createTextNode("@media screen and (orientation: portrait) {@-ms-viewport {width: 320px !important;}}@media screen and (orientation: landscape) {@-ms-viewport {width: 560px !important;}}"));document.getElementsByTagName("head")[0].appendChild(c)}c=/MSIE 10/.test(navigator.userAgent)?/complete|loaded/:/interactive|complete|loaded/;null!==k.readyState.match(c)?C(b):D("DOMContentLoaded",function(){navigator.standalone?setTimeout(function(){setTimeout(function(){C(b)},
+1)},1):setTimeout(function(){C(b)},1)},!1)}var I=function(){},n=[],k=m.document,p=k.head,D=m.addEventListener,M=m.removeEventListener,G=JSON.parse,E=k.createElement("a"),x=k.location,H=x.protocol+"//"+x.hostname+x.pathname+x.search,r="app.json",K=!1,B,d,v;try{v=m.localStorage,d=m.applicationCache}catch(P){}if("undefined"===typeof m.Ext)var q=m.Ext={};q.blink=function(b){var c=w(b.id+"-"+H+r);z("viewport","width\x3ddevice-width, initial-scale\x3d1.0, maximum-scale\x3d1.0, minimum-scale\x3d1.0, user-scalable\x3dno");
+z("apple-mobile-web-app-capable","yes");z("apple-touch-fullscreen","yes");c?(b=new t(c),N(b)):s(r,function(c){b=new t(c);b.store();N(b)})}})(this);;Ext.blink({"id":"3a790074-4c65-43db-b67e-996e064c01f8"})</script><script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+</head>
+<body>
+    <div id="appLoadingIndicator">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

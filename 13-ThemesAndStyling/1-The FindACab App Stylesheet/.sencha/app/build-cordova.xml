@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Cordova">
+
+    <!-- ////////////// -->
+    <!-- Public Targets -->
+    <!-- ////////////// -->
+    <target name="Native Build - Testing" description="Build a Sencha Testing Application into a Cordova Native Application" depends="cordova-build-testing"/>
+    <target name="Native Build - Production" description="Build a Sencha Production Application into a Cordova Native Application" depends="cordova-build-production"/>
+
+    <target name="Native Build + Emulate - Production" description="Build a Sencha Production Application into a Cordova Native Application and Emulate it" depends="cordova-build-emulate-production"/>
+    
+    <target name="Native Build + Emulate - Testing" description="Build a Sencha Testing Application into a Cordova Native Application and Emulate it" depends="cordova-build-emulate-testing"/>
+    <!--
+    platform setters
+    -->
+    <target name="ios">
+        <property name="app.platform" value="ios"/>
+    </target>
+
+    <target name="android">
+        <property name="app.platform" value="android"/>
+    </target>
+
+    <target name="webworks">
+        <property name="app.platform" value="webworks"/>
+    </target>
+
+    <target name="windowsphone8">
+        <property name="app.platform" value="windowsphone8"/>
+    </target>
+
+    <target name="web">
+        <property name="app.platform" value="web"/>
+    </target>
+
+
+    <!-- ////////////// -->
+    <!-- Private Targets -->
+    <!-- ////////////// -->
+    
+    <property environment="env"/>
+    <!-- this will set it if windows -->
+    <condition property="path.separator" value=";">
+        <os family="windows"/>
+    </condition>
+    <!-- if not windows, this will take effect -->
+    <property name="path.separator" value=":"/>
+    
+
+    <target name="-before-cordova-build-testing"/>
+    <target name="-cordova-build-testing" depends="init-cordova, cordova-build, cordova-native-build"/>
+    <target name="-after-cordova-build-testing"/>
+    <target name="cordova-build-testing" depends="testing, init, -before-cordova-build-testing, -cordova-build-testing, -after-cordova-build-testing"/>
+
+    <target name="-before-cordova-build-production"/>
+    <target name="-cordova-build-production" depends="init-cordova, cordova-build, cordova-native-build"/>
+    <target name="-after-cordova-build-production"/>
+    <target name="cordova-build-production" depends="production, init, -before-cordova-build-production, -cordova-build-production, -after-cordova-build-production"/>
+
+    <target name="-before-cordova-build-emulate-production"/>
+    <target name="-cordova-build-emulate-production" depends="cordova-build-production, cordova-native-emulate"/>
+    <target name="-after-cordova-build-emulate-production"/>
+    <target name="cordova-build-emulate-production" depends="production, init, -before-cordova-build-emulate-production, -cordova-build-emulate-production, -after-cordova-build-emulate-production"/>
+
+    <target name="-before-cordova-build-emulate-testing"/>
+    <target name="-cordova-build-emulate-testing" depends="cordova-build-testing, cordova-native-emulate"/>
+    <target name="-after-cordova-build-emulate-testing"/>
+    <target name="cordova-build-emulate-testing" depends="testing, init, -before-cordova-build-emulate-testing, -cordova-build-emulate-testing, -after-cordova-build-emulate-testing"/>
+
+    <!-- Cordova Init -->
+    <target name="-before-init-cordova"/>
+    <target name="-init-cordova">
+        <x-script-def name="apply-cordova-json" src="${cmd.dir}/extensions/cmd-cordova-packager/ant/apply-cordova-json.js">
+            <script src="${cmd.dir}/ant/JSON.js"/>
+            <script src="${cmd.dir}/ant/ant-util.js"/>
+        </x-script-def>
+    </target>
+    <target name="-after-init-cordova"/>
+    <target name="init-cordova" depends="init, reset-cordova, -before-init-cordova, -init-cordova, -after-init-cordova"/>
+
+    <!-- Cordova Reset -->
+    <target name="-before-reset-cordova"/>
+    <target name="-reset-cordova">
+        <move file="${app.dir}/app_original.json" tofile="${app.dir}/app.json" failonerror="false"/>
+    </target>
+    <target name="-after-reset-cordova"/>
+    <target name="reset-cordova" depends="-before-reset-cordova, -reset-cordova, -after-reset-cordova"/>
+
+    <!-- Cordova Build Initialization-->
+    <target name="-before-init-cordova-build"/>
+    <target name="-init-cordova-build">
+        <antcall target="init-cordova-${app.platform}"/>
+        <copy file="${app.dir}/app.json" tofile="${app.dir}/app_original.json"/>
+        <apply-cordova-json/>
+    </target>
+    <target name="-after-init-cordova-build"/>
+    <target name="init-cordova-build" depends="-before-init-cordova-build, -init-cordova-build, -after-init-cordova-build"/>
+
+    <!-- Cordova Builds-->
+    <target name="-before-cordova-build"/>
+    <target name="-cordova-build">
+        <antcall target="cordova-build-${app.platform}"/>
+    </target>
+    <target name="-after-cordova-build"/>
+    <target name="cordova-build" depends="init-cordova-build, -before-cordova-build, build, -cordova-build, -after-cordova-build, post-cordova-build">
+        <antcall target="reset-cordova"/>
+    </target>
+
+    <!-- Cordova Build Initialization-->
+    <target name="-before-post-cordova-build"/>
+    <target name="-post-cordova-build">
+        <script language="javascript">
+            env = project.getProperty("app.platform");
+            project.setProperty("cmd-cordova-packager.cordova.webroot.dir", project.getProperty("cmd-cordova-packager.cordova."+env+".webroot.dir"));
+        </script>
+
+        <!-- Move in new files -->
+        <move todir="${cmd-cordova-packager.cordova.webroot.dir}">
+            <fileset dir="${build.dir}/${args.environment}">
+                <include name="**"/>
+            </fileset>
+        </move>
+    </target>
+    <target name="-after-post-cordova-build"/>
+    <target name="post-cordova-build" depends="-before-post-cordova-build, -post-cordova-build, -after-post-cordova-build"/>
+
+
+    <!-- Cordova Native Build-->
+    <target name="-before-cordova-native-build"/>
+    <target name="-cordova-native-build">
+        <antcall target="cordova-native-build-${app.platform}"/>
+    </target>
+    <target name="-after-cordova-native-build"/>
+    <target name="cordova-native-build" depends="-before-cordova-native-build, -cordova-native-build, -after-cordova-native-build"/>
+
+    <!-- Cordova Native Emulate-->
+    <target name="-before-cordova-native-emulate"/>
+    <target name="-cordova-native-emulate">
+        <antcall target="cordova-native-emulate-${app.platform}"/>
+    </target>
+    <target name="-after-cordova-native-emulate"/>
+    <target name="cordova-native-emulate" depends="-before-cordova-native-emulate, -cordova-native-emulate, -after-cordova-native-emulate"/>
+</project>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Cordova.Blackberry 10">
+    <target name="Create - Native App" description="Creates a Blackberry 10 Application in the projects native folder" depends="cordova-native-create-bb10"/>
+    <target name="Build - Native App" description="Builds the Blackberry 10 Application Project" depends="cordova-native-build-bb10"/>
+    <target name="Emulate - Native App" description="Emulates the Blackberry 10 Application Project" depends="cordova-native-emulate-bb10"/>
+    <target name="Run - Native App" description="Runs the Blackberry 10 Application" depends="cordova-native-run-bb10"/>
+    <target name="Add Emulator" description="Adds a Blackberry 10 Emulator" depends="cordova-add-bb10-emulator"/>
+    <target name="Add Device" description="Adds a Blackberry 10 Emulator" depends="cordova-add-bb10-device"/>
+
+    <!-- Initialize Cordova for Blackberry 10 -->
+    <target name="-before-init-cordova-bb10"/>
+    <target name="-init-cordova-bb10">
+        <condition property="cordova.bb10.systempath" value="${packager.osx.systemPaths}${path.separator}{env.PATH}">
+            <os family="mac"/>
+        </condition>
+        <property name="cordova.bb10.systempath" value="${env.PATH}"/>
+    </target>
+    <target name="-after-init-cordova-bb10"/>
+    <target name="init-cordova-bb10" depends="init-cordova, -before-init-cordova-bb10, -init-cordova-bb10, -after-init-cordova-bb10"/>
+
+
+    <!--/////////////////////////////////////-->
+    <!-- Cordova Native Application Creation -->
+    <!--/////////////////////////////////////-->
+    <target name="-before-cordova-native-create-bb10"/>
+    <target name="-cordova-native-create-bb10">
+        <run-bb10>
+            ${cmd-cordova-packager.cordova.lib.dir}/blackberry/blackberry10/bin/create ${cmd-cordova-packager.cordova.bb10.dir} ${app.platforms.bb10.package}.${app.name} ${app.name};
+        </run-bb10>
+        <mkdir dir="${cmd-cordova-packager.cordova.bb10.src.dir}"/>
+        <copy file="${cmd-cordova-packager.cordova.bb10.webroot.dir}/cordova.js" tofile="${cmd-cordova-packager.cordova.bb10.src.dir}/cordova.js"/>
+    </target>
+    <target name="-after-cordova-native-create-bb10"/>
+    <target name="cordova-native-create-bb10" depends="init-cordova-bb10, -before-cordova-native-create-bb10, -cordova-native-create-bb10, -after-cordova-native-create-bb10"/>
+
+
+    <!--/////////////////////////////////////-->
+    <!-- Cordova Native Application Building -->
+    <!--/////////////////////////////////////-->
+    <target name="-before-cordova-native-build-bb10"/>
+    <target name="-cordova-native-build-bb10">
+        <run-bb10>
+            ${cmd-cordova-packager.cordova.bb10.dir}/cordova/build
+        </run-bb10>
+    </target>
+    <target name="-after-cordova-native-build-bb10"/>
+    <target name="cordova-native-build-bb10" depends="init-cordova-bb10, -before-cordova-native-build-bb10, -cordova-native-build-bb10, -after-cordova-native-build-bb10"/>
+
+    <!--/////////////////////////////////////-->
+    <!-- Cordova Blackberry 10 Emulator            -->
+    <!--/////////////////////////////////////-->
+    <target name="-before-cordova-add-bb10-emulator"/>
+    <target name="-cordova-add-bb10-emulator">
+        <exec executable="${cmd-cordova-packager.cordova.bb10.dir}/cordova/target">
+            <env key="PATH" path="${cordova.bb10.systempath}"/>
+            <arg value="add"/>
+            <arg value="${packager.cordova.bb10.simulator.name}"/>
+            <arg value="${packager.cordova.bb10.simulator.ip}"/>
+            <arg value="-t"/>
+            <arg value="simulator"/>
+            <arg value="-p"/>
+            <arg value="${packager.cordova.bb10.simulator.password}"/>
+        </exec>
+    </target>
+    <target name="-after-cordova-add-bb10-emulator"/>
+    <target name="cordova-add-bb10-emulator" depends="init-cordova-bb10, -before-cordova-add-bb10-emulator, -cordova-add-bb10-emulator, -after-cordova-add-bb10-emulator"/>
+
+    <!--/////////////////////////////////////-->
+    <!-- Cordova Blackberry 10 Emulator      -->
+    <!--/////////////////////////////////////-->
+    <target name="-before-cordova-add-bb10-device"/>
+    <target name="-cordova-add-bb10-device">
+        <exec executable="${cmd-cordova-packager.cordova.bb10.dir}/cordova/target">
+            <env key="PATH" path="${cordova.bb10.systempath}"/>
+            <arg value="add"/>
+            <arg value="${packager.cordova.bb10.device.name}"/>
+            <arg value="${packager.cordova.bb10.device.ip}"/>
+            <arg value="-t"/>
+            <arg value="device"/>
+            <arg value="-p"/>
+            <arg value="${packager.cordova.bb10.device.password}"/>
+        </exec>
+    </target>
+    <target name="-after-cordova-add-bb10-device"/>
+    <target name="cordova-add-bb10-device" depends="init-cordova-bb10, -before-cordova-add-bb10-device, -cordova-add-bb10-device, -after-cordova-add-bb10-device"/>
+
+    <!--/////////////////////////////////////-->
+    <!-- Cordova Native Application Emulation -->
+    <!--/////////////////////////////////////-->
+    <target name="-before-cordova-native-emulate-bb10"/>
+    <target name="-cordova-native-emulate-bb10" >
+        <run-bb10>
+            ${cmd-cordova-packager.cordova.bb10.dir}/cordova/run ${packager.cordova.bb10.simulator.name};
+        </run-bb10>
+    </target>
+    <target name="-after-cordova-native-emulate-bb10"/>
+    <target name="cordova-native-emulate-bb10" depends="init-cordova-bb10, -before-cordova-native-emulate-bb10, -cordova-native-emulate-bb10, -after-cordova-native-emulate-bb10"/>
+
+    <!--/////////////////////////////////////-->
+    <!-- Cordova Native Application Running -->
+    <!--/////////////////////////////////////-->
+    <target name="-before-cordova-native-run-bb10"/>
+    <target name="-cordova-native-run-bb10">
+          <run-bb10>
+            ${cmd-cordova-packager.cordova.bb10.dir}/cordova/run --keystorepass ${packager.cordova.bb10.device.keystorepass} ${packager.cordova.bb10.device.name};
+        </run-bb10>
+    </target>
+    <target name="-after-cordova-native-run-bb10"/>
+    <target name="cordova-native-run-bb10" depends="init-cordova-bb10, -before-cordova-native-run-bb10, -cordova-native-run-bb10, -after-cordova-native-run-bb10"/>
+
+
+    <!--/////////////////////////////////////-->
+    <!-- Build for the Sencha + Application -->
+    <!--/////////////////////////////////////-->
+    <target name="-before-cordova-build-bb10"/>
+    <target name="-cordova-build-bb10"/>
+    <target name="-after-cordova-build-bb10"/>
+    <target name="cordova-build-bb10" depends="init-cordova-bb10, -before-cordova-build-bb10, -cordova-build-bb10, -after-cordova-build-bb10"/>
+
+
+    <macrodef name="run-bb10">
+    <text name="text"/>
+        <sequential>
+            <if>
+                <os family="windows"/>
+                <then>
+                    <x-shell>
+                        @{text}
+                    </x-shell>
+                </then>
+            <else>
+                <x-shell>
+                    export PATH=${cordova.bb10.systempath};
+                    source ${packager.cordova.bb10.sdk.dir}/bbndk-env.sh;
+                    @{text}
+                </x-shell>
+            </else>
+        </if>
+        </sequential>
+    </macrodef>
+</project>

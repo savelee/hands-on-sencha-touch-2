@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Cordova.iOS">
+    <target name="Create - Native App" description="Creates a iOS Application in the projects native folder" depends="cordova-native-create-ios"/>
+    <target name="Build - Native App" description="Builds the iOS Application Project" depends="cordova-native-build-ios"/>
+    <target name="Emulate - Native App" description="Emulates the iOS Application Project" depends="cordova-native-emulate-ios"/>
+    <target name="Run - Native App" description="Runs the iOS Application" depends="cordova-native-run-ios"/>
+
+    <!-- Initialize Cordova for iOS -->
+    <target name="-before-init-cordova-ios"/>
+    <target name="-init-cordova-ios"/>
+    <target name="-after-init-cordova-ios"/>
+    <target name="init-cordova-ios"
+            depends="init-cordova, -before-init-cordova-ios, -init-cordova-ios, -after-init-cordova-ios"/>
+
+
+    <!--/////////////////////////////////////-->
+    <!-- Cordova Native Application Creation -->
+    <!--/////////////////////////////////////-->
+    <target name="-before-cordova-native-create-ios"/>
+    <target name="-cordova-native-create-ios">
+        <mkdir dir="${cmd-cordova-packager.cordova.ios.dir}"/>
+        <exec executable="${cmd-cordova-packager.cordova.lib.dir}/ios/bin/create">
+            <arg value="${cmd-cordova-packager.cordova.ios.dir}"/>
+            <arg value="${app.platforms.ios.package}.${app.name}"/>
+            <arg value="${app.name}"/>
+        </exec>
+        <mkdir dir="${cmd-cordova-packager.cordova.ios.src.dir}"/>
+        <copy file="${cmd-cordova-packager.cordova.ios.webroot.dir}/cordova.js" tofile="${cmd-cordova-packager.cordova.ios.src.dir}/cordova.js"/>
+    </target>
+    <target name="-after-cordova-native-create-ios"/>
+    <target name="cordova-native-create-ios"
+            depends="init-cordova-ios, -before-cordova-native-create-ios, -cordova-native-create-ios, -after-cordova-native-create-ios"/>
+
+
+    <!--/////////////////////////////////////-->
+    <!-- Cordova Native Application Building -->
+    <!--/////////////////////////////////////-->
+    <target name="-before-cordova-native-build-ios"/>
+    <target name="-cordova-native-build-ios">
+        <exec executable="${cmd-cordova-packager.cordova.ios.dir}/cordova/build"/>
+    </target>
+    <target name="-after-cordova-native-build-ios"/>
+    <target name="cordova-native-build-ios"
+            depends="init-cordova-ios, -before-cordova-native-build-ios, -cordova-native-build-ios, -after-cordova-native-build-ios"/>
+
+
+    <!--/////////////////////////////////////-->
+    <!-- Cordova Native Application Emulation -->
+    <!--/////////////////////////////////////-->
+    <target name="-before-cordova-native-emulate-ios"/>
+    <target name="-cordova-native-emulate-ios">
+        <x-launch-terminal dir="${cmd-cordova-packager.cordova.ios.dir}">
+            ${cmd-cordova-packager.cordova.ios.dir}/cordova/emulate
+        </x-launch-terminal>
+    </target>
+    <target name="-after-cordova-native-emulate-ios"/>
+    <target name="cordova-native-emulate-ios"
+            depends="init-cordova-ios, -before-cordova-native-emulate-ios, -cordova-native-emulate-ios, -after-cordova-native-emulate-ios"/>
+
+
+    <!--/////////////////////////////////////-->
+    <!-- Cordova Native Application Running -->
+    <!--/////////////////////////////////////-->
+    <target name="-before-cordova-native-run-ios"/>
+    <target name="-cordova-native-run-ios">
+        <x-launch-terminal dir="${cmd-cordova-packager.cordova.ios.dir}">
+            ${cmd-cordova-packager.cordova.ios.dir}/cordova/run
+        </x-launch-terminal>
+    </target>
+    <target name="-after-cordova-native-run-ios"/>
+    <target name="cordova-native-run-ios"
+            depends="init-cordova-ios, -before-cordova-native-run-ios, -cordova-native-run-ios, -after-cordova-native-run-ios"/>
+
+
+    <!--/////////////////////////////////////-->
+    <!-- Build for the Sencha + Application -->
+    <!--/////////////////////////////////////-->
+    <target name="-before-cordova-build-ios"/>
+    <target name="-cordova-build-ios">
+        <delete includeemptydirs="true">
+            <fileset dir="${cmd-cordova-packager.cordova.ios.webroot.dir}" includes="**/*" defaultexcludes="no"/>
+        </delete>
+    </target>
+    <target name="-after-cordova-build-ios"/>
+    <target name="cordova-build-ios"
+            depends="init-cordova-ios, -before-cordova-build-ios, -cordova-build-ios, -after-cordova-build-ios"/>
+</project>

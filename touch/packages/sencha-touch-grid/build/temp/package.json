@@ -1,0 +1,10 @@
+{
+  "name": "sencha-touch-grid",
+  "format": "1",
+  "version": "2.3.0",
+  "creator": "anonymous",
+  "summary": "Short summary",
+  "detailedDescription": "Long description of package",
+  "type": "code",
+  "local": true
+}

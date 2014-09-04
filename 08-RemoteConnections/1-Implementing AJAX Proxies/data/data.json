@@ -1,0 +1,41 @@
+{
+    "message": {
+        "text": "OK",
+        "code": 0,
+        "version": "1.1.1"
+    },
+    "businesses": [
+        {
+            "rating_img_url": "stars/v1/stars_5.png",
+            "country_code": "NL",
+            "city": "Amsterdam",
+            "mobile_url": "http://m.yelp.nl/biz/taxi-klaas-amsterdam",
+            "review_count": 2,
+            "zip": "",
+            "state": "Noord-Holland",
+            "latitude": 52.3738007,
+            "rating_img_url_small": "stars/v1/stars_small_5.png",
+            "url": "http://www.yelp.nl/biz/taxi-klaas-amsterdam",
+            "country": "Netherlands",
+            "avg_rating": 5,
+            "longitude": 4.8909347,
+            "nearby_url": "http://www.yelp.nl/search",
+        },
+        {
+            "rating_img_url": "stars/v1/stars_5.png",
+            "country_code": "NL",
+            "city": "Amsterdam",
+            "mobile_url": "http://m.yelp.nl/biz/taxi-klaas-amsterdam",
+            "review_count": 2,
+            "zip": "",
+            "state": "Noord-Holland",
+            "latitude": 52.3738007,
+            "rating_img_url_small": "stars/v1/stars_small_5.png",
+            "url": "http://www.yelp.nl/biz/taxi-klaas-amsterdam",
+            "country": "Netherlands",
+            "avg_rating": 5,
+            "longitude": 4.8909347,
+            "nearby_url": "http://www.yelp.nl/search",
+        }       
+    ]
+}

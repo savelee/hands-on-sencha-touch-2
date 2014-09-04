@@ -1,0 +1,56 @@
+{
+    "name": "Grid",
+    "js": [
+        {
+            "path": "../../../../sencha-touch-all-debug.js",
+            "x-bootstrap": true
+        },
+        {
+            "path": "bootstrap.js",
+            "x-bootstrap": true
+        },
+        {
+            "path": "app.js",
+            "update": "delta"
+        }
+    ],
+    "css": [
+        {
+            "path": "../../../../resources/css/sencha-touch.css",
+            "platform": ["chrome", "safari", "ios", "android", "blackberry", "firefox"],
+            "update": "delta"
+        },
+        {
+            "path": "../../../../resources/css/wp.css",
+            "platform": ["ie10", "windows"],
+            "theme": "Windows",
+            "update": "delta"
+        }
+    ],
+    "appCache": {
+        "cache": [
+            "index.html",
+            "contacts.json"
+        ],
+        "network": [
+            "*"
+        ],
+        "fallback": []
+    },
+    "extras": [
+        "contacts.json",
+        "resources/icons",
+        "resources/loading"
+    ],
+    "archivePath": "archive",
+    "buildOptions": {
+        "product": "touch",
+        "minVersion": 3,
+        "debug": false,
+        "logger": "no"
+    },
+    "id": "3a867610-670a-11e1-a90e-4318029d18bb",
+    "requires": [
+        "sencha-touch-grid"
+    ]
+}

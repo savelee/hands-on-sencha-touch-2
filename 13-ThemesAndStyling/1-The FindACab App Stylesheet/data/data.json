@@ -1,0 +1,159 @@
+{
+    "message": {
+        "text": "OK",
+        "code": 0,
+        "version": "1.1.1"
+    },
+    "businesses": [
+        {
+            "rating_img_url": "stars/v1/stars_5.png",
+            "country_code": "NL",
+            "id": "oVCwW-nr_SCRtsCo_yk3JQ",
+            "is_closed": false,
+            "city": "Amsterdam",
+            "mobile_url": "http://m.yelp.nl/biz/taxi-klaas-amsterdam",
+            "review_count": 2,
+            "zip": "",
+            "state": "Noord-Holland",
+            "latitude": 52.3738007,
+            "rating_img_url_small": "stars/v1/stars_small_5.png",
+            "address1": "",
+            "address2": "",
+            "address3": "",
+            "phone": "+31630383525",
+            "state_code": "NH",
+            "categories": [
+                {
+                    "category_filter": "localservices",
+                    "search_url": "http://www.yelp.nl/search?",
+                    "name": "Local Services"
+                },
+                {
+                    "category_filter": "taxis",
+                    "search_url": "http://www.yelp.nl/search?",
+                    "name": "Taxis"
+                }
+            ],
+            "photo_url": "http://media1.ak.yelpcdn.com/",
+            "distance": 0.305419,
+            "name": "Taxi Klaas",
+            "neighborhoods": [
+                {
+                    "url": "http://www.yelp.nl/search",
+                    "name": "Centrum"
+                }
+            ],
+            "url": "http://www.yelp.nl/biz/taxi-klaas-amsterdam",
+            "country": "Netherlands",
+            "avg_rating": 5,
+            "longitude": 4.8909347,
+            "nearby_url": "http://www.yelp.nl/search",
+            "reviews": [
+                {
+                    "rating_img_url_small": "stars/v1/stars_small_5.png",
+                    "user_photo_url_small": "ss",
+                    "rating_img_url": "stars/v1/stars_5.png",
+                    "rating": 5,
+                    "user_url": "user_details?userid=o5DQC2ALlgYFgNeCRlcC_Q",
+                    "url": "http://www.yelp.nl/",
+                    "mobile_uri": "/biz/taxi-klaas-amsterdam?",
+                    "text_excerpt": "Mijn favoriete taxi...",
+                    "user_photo_url": "http://media1.ak.yelpcdn.com/",
+                    "date": "2010-11-16",
+                    "user_name": "Julia R.",
+                    "id": "n-xXUx1QoH4F2zyKimhJ8A"
+                },
+                {
+                    "rating_img_url_small": "stars/v1/stars_small_5.png",
+                    "user_photo_url_small": "ss",
+                    "rating_img_url": "stars/v1/stars_5.png",
+                    "rating": 5,
+                    "user_url": "user_details?userid=o5DQC2ALlgYFgNeCRlcC_Q",
+                    "url": "http://www.yelp.nl/",
+                    "mobile_uri": "/biz/taxi-klaas-amsterdam?",
+                    "text_excerpt": "Mijn favoriete taxi...",
+                    "user_photo_url": "http://media1.ak.yelpcdn.com/",
+                    "date": "2010-11-16",
+                    "user_name": "Julia R.",
+                    "id": "n-xXUx1QoH4F2zyKimhJ8A"
+                },
+            ],
+            "photo_url_small": "bpthumb/b_4BVMdLncwu_XOFuMo4pQ/ss"
+        },
+        {
+            "rating_img_url": "stars/v1/stars_5.png",
+            "country_code": "NL",
+            "id": "oVCwW-nr_SCRtsCo_333",
+            "is_closed": false,
+            "city": "Amsterdam",
+            "mobile_url": "http://m.yelp.nl/biz/taxi-klaas-amsterdam",
+            "review_count": 2,
+            "zip": "",
+            "state": "Noord-Holland",
+            "latitude": 52.3738007,
+            "rating_img_url_small": "stars/v1/stars_small_5.png",
+            "address1": "",
+            "address2": "",
+            "address3": "",
+            "phone": "+31630383525",
+            "state_code": "NH",
+            "categories": [
+                {
+                    "category_filter": "localservices",
+                    "search_url": "search?&find_loc=Amsterdam",
+                    "name": "Local Services"
+                },
+                {
+                    "category_filter": "taxis",
+                    "search_url": "search?&find_loc=Amsterdam",
+                    "name": "Taxis"
+                }
+            ],
+            "photo_url": "http://media1.ak.yelpcdn.com/",
+            "distance": 0.505419,
+            "name": "Taxi Klaas Oud",
+            "neighborhoods": [
+                {
+                    "url": "http://www.yelp.nl/search",
+                    "name": "Centrum"
+                }
+            ],
+            "url": "http://www.yelp.nl/biz/taxi-klaas-amsterdam",
+            "country": "Netherlands",
+            "avg_rating": 5,
+            "longitude": 4.8909347,
+            "nearby_url": "http://www.yelp.nl/search",
+            "reviews": [
+                {
+                    "rating_img_url_small": "stars/v1/stars_small_5.png",
+                    "user_photo_url_small": "ss",
+                    "rating_img_url": "stars/v1/stars_5.png",
+                    "rating": 5,
+                    "user_url": "user_details?userid=o5DQC2ALlgYFgNeCRlcC_Q",
+                    "url": "http://www.yelp.nl/",
+                    "mobile_uri": "/biz/taxi-klaas-amsterdam?",
+                    "text_excerpt": "Mijn favoriete taxi...",
+                    "user_photo_url": "http://media1.ak.yelpcdn.com/",
+                    "date": "2010-11-16",
+                    "user_name": "Julia R.",
+                    "id": "n-xXUx1QoH4F2zyKimhJ8A"
+                },
+                {
+                    "rating_img_url_small": "stars/v1/stars_small_5.png",
+                    "user_photo_url_small": "ss",
+                    "rating_img_url": "stars/v1/stars_5.png",
+                    "rating": 5,
+                    "user_url": "user_details?userid=o5DQC2ALlgYFgNeCRlcC_Q",
+                    "url": "http://www.yelp.nl/",
+                    "mobile_uri": "/biz/taxi-klaas-amsterdam?",
+                    "text_excerpt": "Mijn favoriete taxi...",
+                    "user_photo_url": "http://media1.ak.yelpcdn.com/",
+                    "date": "2010-11-16",
+                    "user_name": "Julia R.",
+                    "id": "n-xXUx1QoH4F2zyKimhJ8A"
+                },
+            ],
+            "photo_url_small": "bpthumb/b_4BVMdLncwu_XOFuMo4pQ/ss"
+        }       
+    ]
+}

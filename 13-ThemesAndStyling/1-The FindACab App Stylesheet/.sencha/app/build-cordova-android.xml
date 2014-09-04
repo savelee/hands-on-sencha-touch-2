@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Cordova.Android">
+    <target name="Create - Native App" description="Creates a Android Application in the projects native folder" depends="cordova-native-create-android"/>
+    <target name="Build - Native App" description="Builds the Android Application Project" depends="cordova-native-build-android"/>
+    <target name="Emulate - Native App" description="Emulates the Android Application Project" depends="cordova-native-emulate-android"/>
+    <target name="Run - Native App" description="Runs the Android Application" depends="cordova-native-run-android"/>
+    <target name="Start - Emulator" description="Starts an Android Emulator" depends="cordova-start-android-emulator"/>
+    <target name="Install - Emulator" description="Installs app into the current Android Emulator" depends="cordova-install-into-android-emulator"/>
+    <target name="Install - Device" description="Installs app into the current Android Device" depends="cordova-install-into-android-device"/>
+
+    <!-- Initialize Cordova for Android -->
+    <target name="-before-init-cordova-android"/>
+    <target name="-init-cordova-android">
+        <condition property="cordova.android.systempath" value="${packager.osx.systemPaths}${path.separator}${packager.cordova.android.sdk.dir}/platform-tools${path.separator}${packager.cordova.android.sdk.dir}/tools${path.separator}${env.PATH}">
+            <os family="mac"/>
+        </condition>
+        <property name="cordova.android.systempath" value="${packager.cordova.android.sdk.dir}/platform-tools${path.separator}${packager.cordova.android.sdk.dir}/tools${path.separator}${env.PATH}"/>
+    </target>
+    <target name="-after-init-cordova-android"/>
+    <target name="init-cordova-android" depends="init-cordova, -before-init-cordova-android, -init-cordova-android, -after-init-cordova-android"/>
+
+
+    <!--/////////////////////////////////////-->
+    <!-- Cordova Native Application Creation -->
+    <!--/////////////////////////////////////-->
+    <target name="-before-cordova-native-create-android"/>
+    <target name="-cordova-native-create-android">
+        <exec executable="${cmd-cordova-packager.cordova.lib.dir}/android/bin/create">
+            <env key="ANDROID_BIN" value="${packager.cordova.android.sdk.dir}/tools/android"/>
+            <arg value="${cmd-cordova-packager.cordova.android.dir}"/>
+            <arg value="${app.platforms.android.package}.${app.name}"/>
+            <arg value="${app.name}"/>
+        </exec>
+        <mkdir dir="${cmd-cordova-packager.cordova.android.src.dir}"/>
+        <copy file="${cmd-cordova-packager.cordova.android.webroot.dir}/cordova.js" tofile="${cmd-cordova-packager.cordova.android.src.dir}/cordova.js"/>
+    </target>
+    <target name="-after-cordova-native-create-android"/>
+    <target name="cordova-native-create-android" depends="init-cordova-android, -before-cordova-native-create-android, -cordova-native-create-android, -after-cordova-native-create-android"/>
+
+
+    <!--/////////////////////////////////////-->
+    <!-- Cordova Native Application Building -->
+    <!--/////////////////////////////////////-->
+    <target name="-before-cordova-native-build-android"/>
+    <target name="-cordova-native-build-android">
+        <exec executable="${cmd-cordova-packager.cordova.android.dir}/cordova/build">
+            <env key="PATH" path="${cordova.android.systempath}"/>
+            <env key="ANDROID_BIN" value="${packager.cordova.android.sdk.dir}/tools/android"/>
+        </exec>
+    </target>
+    <target name="-after-cordova-native-build-android"/>
+    <target name="cordova-native-build-android" depends="init-cordova-android, -before-cordova-native-build-android, -cordova-native-build-android, -after-cordova-native-build-android"/>
+
+    <!--/////////////////////////////////////-->
+    <!-- Cordova Android Emulator            -->
+    <!--/////////////////////////////////////-->
+    <target name="-before-cordova-start-android-emulator"/>
+    <target name="-cordova-start-android-emulator">
+         <exec executable="${cmd-cordova-packager.cordova.android.dir}/cordova/lib/start-emulator">
+            <env key="PATH" path="${cordova.android.systempath}"/>
+        </exec>
+    </target>
+    <target name="-after-cordova-start-android-emulator"/>
+    <target name="cordova-start-android-emulator" depends="init-cordova-android, -before-cordova-start-android-emulator, -cordova-start-android-emulator, -after-cordova-start-android-emulator"/>
+
+    <!--/////////////////////////////////////-->
+    <!-- Install App into Android Emulator   -->
+    <!--/////////////////////////////////////-->
+    <target name="-before-cordova-install-into-android-emulator"/>
+    <target name="-cordova-install-into-android-emulator">
+         <exec executable="${cmd-cordova-packager.cordova.android.dir}/cordova/lib/install-emulator">
+            <env key="PATH" path="${cordova.android.systempath}"/>
+        </exec>
+    </target>
+    <target name="-after-cordova-install-into-android-emulator"/>
+    <target name="cordova-install-into-android-emulator" depends="init-cordova-android, -before-cordova-install-into-android-emulator, -cordova-install-into-android-emulator, -after-cordova-install-into-android-emulator"/>
+
+    <!--/////////////////////////////////////-->
+    <!-- Install App into Android Device   -->
+    <!--/////////////////////////////////////-->
+    <target name="-before-cordova-install-into-android-device"/>
+    <target name="-cordova-install-into-android-device">
+         <exec executable="${cmd-cordova-packager.cordova.android.dir}/cordova/lib/install-device">
+            <env key="PATH" path="${cordova.android.systempath}"/>
+        </exec>
+    </target>
+    <target name="-after-cordova-install-into-android-device"/>
+    <target name="cordova-install-into-android-device" depends="init-cordova-android, -before-cordova-install-into-android-device, -cordova-install-into-android-device, -after-cordova-install-into-android-device"/>
+
+    <!--/////////////////////////////////////-->
+    <!-- Cordova Native Application Emulation -->
+    <!--/////////////////////////////////////-->
+    <target name="-before-cordova-native-emulate-android"/>
+    <target name="-cordova-native-emulate-android" >
+        <exec executable="${cmd-cordova-packager.cordova.android.dir}/cordova/run">
+            <env key="PATH" path="${cordova.android.systempath}"/>
+            <arg value="--emulator"/>
+        </exec>
+    </target>
+    <target name="-after-cordova-native-emulate-android"/>
+    <target name="cordova-native-emulate-android" depends="init-cordova-android, -before-cordova-native-emulate-android, -cordova-native-emulate-android, -after-cordova-native-emulate-android"/>
+
+
+    <!--/////////////////////////////////////-->
+    <!-- Cordova Native Application Running -->
+    <!--/////////////////////////////////////-->
+    <target name="-before-cordova-native-run-android"/>
+    <target name="-cordova-native-run-android">
+        <exec executable="${cmd-cordova-packager.cordova.android.dir}/cordova/run">
+            <env key="PATH" path="${cordova.android.systempath}"/>
+        </exec>
+    </target>
+    <target name="-after-cordova-native-run-android"/>
+    <target name="cordova-native-run-android" depends="init-cordova-android, -before-cordova-native-run-android, -cordova-native-run-android, -after-cordova-native-run-android"/>
+
+
+    <!--/////////////////////////////////////-->
+    <!-- Build for the Sencha + Application -->
+    <!--/////////////////////////////////////-->
+    <target name="-before-cordova-build-android"/>
+    <target name="-cordova-build-android">
+        <delete includeemptydirs="true">
+            <fileset dir="${cmd-cordova-packager.cordova.android.webroot.dir}" includes="**/*" defaultexcludes="no"/>
+        </delete>
+    </target>
+    <target name="-after-cordova-build-android"/>
+    <target name="cordova-build-android" depends="init-cordova-android, -before-cordova-build-android, -cordova-build-android, -after-cordova-build-android"/>
+</project>

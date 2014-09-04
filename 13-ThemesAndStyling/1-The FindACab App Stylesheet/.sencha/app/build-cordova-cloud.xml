@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Cordova.Cloud">
+
+    <!-- ////////////// -->
+    <!-- Public Targets -->
+    <!-- ////////////// -->
+    <target name="Build - Testing" description="Creates a ZIP File with a testing build for Cordova Cloud Build Services" depends="cordova-cloud-build-testing"/>
+    
+    <target name="Build - Production" description="Creates a ZIP File with a testing build for Cordova Cloud Build Services" depends="cordova-cloud-build-production"/>
+
+    <target name="Create Application" description="Creates a Cordova Cloud Application for this project" depends="cordova-cloud-create"/>
+
+    <target name="Build and Upload - Testing" description="Compiles and Uploads a Testing build to the Cordova Cloud" depends="cordova-cloud-upload-testing" />
+
+    <target name="Build and Upload - Production" description="Compiles and Uploads a Production build to the Cordova Cloud" depends="cordova-cloud-upload-production"/>
+
+    <!-- PhoneGap Cloud Build -->
+    <target name="-before-init-cordova-cloud-build"/>
+    <target name="-init-cordova-cloud-build">
+        <x-script-def name="apply-cordova-build-json" src="${cmd.dir}/extensions/cmd-cordova-packager/ant/apply-cordova-build-json.js">
+            <script src="${cmd.dir}/ant/JSON.js"/>
+            <script src="${cmd.dir}/ant/ant-util.js"/>
+        </x-script-def>
+
+        <property file="${app.config.dir}/cordova-build.properties"/>
+        <copy file="${app.dir}/app.json" tofile="${app.dir}/app_original.json"/>
+        <apply-cordova-build-json/>
+        
+        <x-script-def name="create-cordova-build" src="${cmd.dir}/extensions/cmd-cordova-packager/ant/create-cordova-build.js">
+            <script src="${cmd.dir}/ant/JSON.js"/>
+            <script src="${cmd.dir}/ant/ant-util.js"/>
+        </x-script-def>
+
+        <x-script-def name="upload-cordova-build" src="${cmd.dir}/extensions/cmd-cordova-packager/ant/upload-cordova-build.js">
+            <script src="${cmd.dir}/ant/JSON.js"/>
+            <script src="${cmd.dir}/ant/ant-util.js"/>
+        </x-script-def>
+    </target>
+    <target name="-after-init-cordova-cloud-build"/>
+    <target name="init-cordova-cloud-build" depends="reset-cordova-build, -before-init-cordova-cloud-build, -init-cordova-cloud-build, -after-init-cordova-cloud-build"/>
+    
+    <target name="-before-reset-cordova-build"/>
+    <target name="-reset-cordova-build">
+        <move file="${app.dir}/app_original.json" tofile="${app.dir}/app.json" failonerror="false"/>
+    </target>
+    <target name="-after-reset-cordova-build"/>
+    <target name="reset-cordova-build" depends="-before-reset-cordova-build, -reset-cordova-build, -after-reset-cordova-build"/>
+
+    <target name="-before-cordova-cloud-build"/>
+    <target name="-cordova-cloud-build">
+        <zip destfile="${cmd-cordova-packager.cordova.cloud.build.dir}/${cmd-cordova-packager.cordova.cloud.prefix}${args.environment}.zip" basedir="${app.build.dir}/${args.environment}"/>
+        <antcall target="reset-cordova-build"/>
+    </target>
+    <target name="-after-cordova-cloud-build"/>
+    <target name="cordova-cloud-build" depends="-before-cordova-cloud-build, -cordova-cloud-build, -after-cordova-cloud-build"/>
+
+    <target name="-before-cordova-cloud-build-testing"/>
+    <target name="-cordova-cloud-build-testing" depends="init-cordova-cloud-build, build-testing, cordova-cloud-build"/>
+    <target name="-after-cordova-cloud-build-testing"/>
+    <target name="cordova-cloud-build-testing" depends="testing, init, -before-cordova-cloud-build-testing, -cordova-cloud-build-testing, -after-cordova-cloud-build-testing"/>
+
+    <target name="-before-cordova-cloud-build-production"/>
+    <target name="-cordova-cloud-build-production" depends="init-cordova-cloud-build, build-production, cordova-cloud-build"/>
+    <target name="-after-cordova-cloud-build-production"/>
+    <target name="cordova-cloud-build-production" depends="production, init, -before-cordova-cloud-build-production, -cordova-cloud-build-production, -after-cordova-cloud-build-production"/>
+
+    <target name="-before-cordova-cloud-create"/>
+    <target name="-cordova-cloud-create">
+        <create-cordova-build/>
+    </target>
+    <target name="-after-cordova-cloud-create"/>
+    <target name="cordova-cloud-create" depends="cordova-cloud-build-testing, -before-cordova-cloud-create, -cordova-cloud-create, -after-cordova-cloud-create"/>
+
+    <target name="-before-cordova-cloud-upload-testing"/>
+    <target name="-cordova-cloud-upload-testing">
+        <upload-cordova-build/>
+    </target>
+    <target name="-after-cordova-cloud-upload-testing"/>
+    <target name="cordova-cloud-upload-testing" depends="cordova-cloud-build-testing, -before-cordova-cloud-upload-testing, -cordova-cloud-upload-testing, -after-cordova-cloud-upload-testing"/>
+
+    <target name="-before-cordova-cloud-upload-production"/>
+    <target name="-cordova-cloud-upload-production">
+        <upload-cordova-build/>
+    </target>
+    <target name="-after-cordova-cloud-upload-production"/>
+    <target name="cordova-cloud-upload-production" depends="cordova-cloud-build-production, -before-cordova-cloud-upload-production, -cordova-cloud-upload-production, -after-cordova-cloud-upload-production"/>
+</project>

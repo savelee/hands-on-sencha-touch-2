@@ -1,0 +1,14 @@
+{
+	"cars" : [
+		{ 
+			"id" : 1,
+			"brand" : "BMW",
+			"taxiservice_id" : 1
+		},
+		{ 
+			"id" : 2,
+			"brand" : "Mercedes",
+			"taxiservice_id" : 1
+		}		
+	]
+}
